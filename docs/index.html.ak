@@ -6,77 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
+      ga: 'UA-55430652-5',
       name: '<span>Doc</span>',
-      nameLink: '/',
       repo: 'https://github.com/skyeworld',
       loadSidebar: true,
-      subMaxLevel: 3,
       loadNavbar: true,
-      autoHeader: true,
-      mergeNavbar: true,
-      auto2top: true,
-      formatUpdated: '{MM}/{DD} {HH}:{mm}',
-      plugins: [
-        function(hook, vm) {
-          hook.beforeEach(function (html) {
-            var url = 'https://github.com/skyeworld/docsify/blob/master/' + vm.route.file
-            var editHtml = '[:memo: Edit Document](' + url + ')\n'
-            return html
-              + '\n----\n'
-              + 'Last modified {docsify-updated} '
-              + editHtml
-          })
-        }
-      ],
-      search: 'auto', // 默认值
-      search: {
-        maxAge: 864000, // 过期时间，单位毫秒，默认一天
-        paths: 'auto', // or 'auto'
-        placeholder: 'Type to search',
+      coverpage: false,
+      notFoundPage: true,
+      subMaxLevel: 4,
 
-        // 支持本地化
-        placeholder: {
-          '/zh-cn/': '搜索',
-          '/': 'Type to search'
-        },
+      search: 'auto', // default
+      
+      
 
-        noData: 'No Results!',
-
-        // 支持本地化
-        noData: {
-          '/zh-cn/': '找不到结果',
-          '/': 'No Results'
-        },
-        // 搜索标题的最大程级, 1 - 6
-        depth: 6
-    },
-
-    tabs: {
+      tabs: {
         persist    : true,      // default
         sync       : true,      // default
         theme      : 'classic', // default
         tabComments: true,      // default
         tabHeadings: true       // default
-    }
+      }
     }
     if (typeof navigator.serviceWorker !== 'undefined') {
     navigator.serviceWorker.register('sw.js')
-    }
+  }
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  
+
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-go.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
@@ -87,15 +54,11 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-sql.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
 
-
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <!-- PDFObject.js is a required dependency of this plugin -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/pdfobject/2.1.1/pdfobject.min.js"></script> 
   <!-- This is the source code of the pdf embed plugin -->
   <script src="path-to-file/docsify-pdf-embed.js"></script>
   <!-- or use this if you are not hosting the file yourself -->
   <script src="//unpkg.com/docsify-pdf-embed-plugin/src/docsify-pdf-embed.js"></script>
-
-
 </body>
 </html>
